@@ -110,7 +110,13 @@
 
     // test if any columns on this board contain conflicts
     hasAnyColConflicts: function() {
-      return false; // fixme
+      const boardSize = this.get('n');
+      for (let i = 0; i < boardSize; i++) {
+        if (this.hasColConflictAt(i)) {
+          return true;
+        }
+      }
+      return false;
     },
 
 
